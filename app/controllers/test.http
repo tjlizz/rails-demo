@@ -1,0 +1,9 @@
+### Send POST request with json body
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email":"18622321433@163.com",
+  "password":"123456",
+  "password_confirmation":"123456"
+}
