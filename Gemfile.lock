@@ -101,6 +101,8 @@ GEM
     puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.3.2)
@@ -133,6 +135,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.1)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -167,13 +170,15 @@ DEPENDENCIES
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
+  rack-cors
   rails (~> 6.0.3, >= 6.0.3.2)
+  redis (~> 4.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 2.6.6p146
 
 BUNDLED WITH
    1.17.3

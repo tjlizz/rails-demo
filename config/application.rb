@@ -36,5 +36,6 @@ module MorneyRails
     config.session_store :cookie_store, key: 'money_session_id'
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use config.session_store, config.session_options
+
+    end
   end
-end

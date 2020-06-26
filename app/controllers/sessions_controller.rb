@@ -5,8 +5,10 @@ class SessionsController < ApplicationController
     s.validate
     render_resource s
     session[:current_user_id] = s.user.id
-
+    $redis.setex "1", 10, "2122"
+    # p $redis.get 1
   end
+
 
   def destory
     session[:current_user_id] = nil

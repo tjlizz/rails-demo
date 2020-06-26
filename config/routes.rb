@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resource :users
   get '/users/me', to: 'users#me'
   delete '/sessions', to: 'sessions#destory'
+  post '/users/forget', to: 'users#forget'
   resource :sessions, only: [:create]
 end

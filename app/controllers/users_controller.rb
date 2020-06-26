@@ -18,4 +18,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def forget
+    user = User.find_by_email params[:email]
+    if user
+      uuid = SecureRandom.uuid
+      Core.add_redis uuid, user.id
+      render json: {password_voucher: uuid}
+    else
+      render json: {errors: "邮箱不存在"}, status: 404
+    end
+  end
+
 end
