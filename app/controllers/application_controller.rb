@@ -6,4 +6,9 @@ class ApplicationController < ActionController::API
       render json: {errors: resource.errors}, status: 400
     end
   end
+
+  def current_user
+    @current_user ||= User.find_by_id session[:current_user_id]
+  end
+
 end

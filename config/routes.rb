@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   # delete 'users/:id',to:'users#destory'
   # patch 'users/:id',to:'users#update'
   resource :users
-  
-  resource :sessions,only:[:create,:destory]
- end
+  get '/users/me', to: 'users#me'
+  resource :sessions, only: [:create, :destory]
+end
