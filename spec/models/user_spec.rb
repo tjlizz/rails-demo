@@ -31,7 +31,11 @@ RSpec.describe User, type: :model do
     user = User.create password: '123456', password_confirmation: '123456', email: '1@qq.com'
     expect(UserMailer).to have_received(:welcome_email)
     expect(x).to have_received(:deliver_later)
-
+  end
+  it '邮箱为空时只提示为空 ' do
+    user = User.create email: ''
+    expect(user.errors.details[:email].length == 1).to be true
+    expect(user.errors.details[:email][0][:error]).to eq  :blank
 
   end
 end
