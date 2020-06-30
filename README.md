@@ -1,3 +1,9 @@
+# docker 创建数据库
+```shell script
+docker run -v morney-rails-1-data:/var/lib/postgresql/data -p 5001:5432 -e POSTGRES_USER=lzz -e POSTGRES_PASSWORD=123456  -d postgres:12.2
+
+```
+
 # 创建数据库
  ```
  bin/rails db:create
